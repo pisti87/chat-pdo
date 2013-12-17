@@ -1,0 +1,65 @@
+body {
+	font: 0.9em Tahoma, Arial;
+	background: #ddd;
+}
+#container {
+	width: 1000px;
+	padding: 25px;
+	background: #fff;
+	margin: 100px auto;
+}
+#conversation {
+	width: 500px;
+	height: 300px;
+	border: 1px solid #ccc;
+	overflow-y: scroll;
+}
+.msg-record {
+	margin-bottom: 10px;
+	padding: 5px;
+	border-bottom: 1px dotted #ccc;
+}
+.msg-record .user {
+	color: #1166aa;
+}
+.msg-record .mes {
+	padding: 5px;
+	line-height: 25px;
+}
+.msg-record .time {
+	font-size: 11px;
+	color: #ccc;
+	margin-left: 5px;
+}
+.msg-record .edit, .msg-record .delete {
+	color: #999;
+	font-size: 11px;
+	cursor: pointer;
+	margin-left: 5px;
+}
+.msg-record .edit:hover, .msg-record .delete:hover {
+	text-decoration: underline;
+}
+.msg-record .deleted {
+	font-style: italic;
+	color: #ccc;
+}
+
+.message {
+	width: 496px;
+	border: 3px solid #ccc;
+}
+.message input[type='text'] {
+	width: 430px;
+}
+h4{
+	margin: 0;
+}
+ul {
+	padding: 0;
+}
+ul li {
+	display: inline-block;
+	padding: 15px;
+	list-style: none;
+}
