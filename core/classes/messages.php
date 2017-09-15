@@ -63,18 +63,18 @@ class Message {
 			}
 	}
 
-	public function update($user_id, $user, $msg_id, $msg, $is_actived){
+	public function update($user_id, $user, $message_id, $message, $is_actived){
 		
-		$r = $this->get_msg_by_id($msg_id);
+		$r = $this->get_msg_by_id($message_id);
 		if ((count($r[0]) > 0) && ($r[0]['user_id'] == $user_id)) {
 			$ip = $_SERVER['REMOTE_ADDR'];
 			$update_time = time();
 			$query 	= $this->db->prepare("UPDATE `messages` SET `message`=?, `ip`=?, `update_time`=?, `is_actived`=? WHERE `message_id` = ?");
-			$query->bindValue(1, $msg);
+			$query->bindValue(1, $message);
 			$query->bindValue(2, $ip);
 			$query->bindValue(3, $update_time);
 			$query->bindValue(4, intval($is_actived));
-			$query->bindValue(5, $msg_id);
+			$query->bindValue(5, $message_id);
 			try{
 				$query->execute();
 				return 'success';
@@ -85,9 +85,9 @@ class Message {
 		}
 	}
 
-	public function delete($user_id, $user, $msg_id, $is_actived){
+	public function delete($user_id, $user, $message_id, $is_actived){
 		
-		$r = $this->get_msg_by_id($msg_id);
+		$r = $this->get_msg_by_id($message_id);
 		if ((count($r[0]) > 0) && ($r[0]['user_id'] == $user_id)) {
 			$ip = $_SERVER['REMOTE_ADDR'];
 			$update_time = time();
@@ -95,7 +95,7 @@ class Message {
 			$query->bindValue(1, $ip);
 			$query->bindValue(2, $update_time);
 			$query->bindValue(3, intval($is_actived));
-			$query->bindValue(4, $msg_id);
+			$query->bindValue(4, $message_id);
 			try{
 				$query->execute();
 				return 'success';
